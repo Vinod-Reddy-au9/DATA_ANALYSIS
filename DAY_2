@@ -1,4 +1,5 @@
 --How many actors have 8 letters only in their first_names
+
 SELECT FIRST_NAME FROM ACTOR
 WHERE LENGTH(FIRST_NAME) = 8;
 
@@ -10,10 +11,11 @@ FROM PAYMENT, CUSTOMER
 WHERE AMOUNT > 5.99;
 
 --Display the film title,inventoryid of the store 1.
+
 SELECT TITLE, INVENTORY_ID
 FROM FILM F INNER JOIN INVENTORY I
 ON F.FILM_ID = I.FILM_ID
-WHERE I.STORE_ID=1;
+WHERE I.STORE_ID = 1;
 
 
 --Display the film details of the actor whose firstname is Ed & lastname
@@ -26,6 +28,7 @@ ON F1.FILM_ID = F2.FILM_ID
 WHERE FIRST_NAME = 'ED' AND LAST_NAME = 'CHASE'
 
 --How many actors have 8 letters only in their first_names
+
 SELECT FIRST_NAME, LAST_NAME, LENGTH(FIRST_NAME) AS F_NAME
 FROM ACTOR
 WHERE LENGTH(FIRST_NAME) = 8;
@@ -37,6 +40,7 @@ OVER(PARTITION BY CATEGORYID) AS TOTAL FROM PRODUCTS;
 
 
 --Display employee details whose shipregion is RJ
+
 SELECT *
 FROM EMPLOYEES E INNER JOIN ORDERS O
 ON E.EMPLOYEEID = O.EMPLOYEEID
@@ -44,6 +48,7 @@ WHERE SHIPREGION = 'RJ';
 
 
 --Display Employee firstname,Customerid whose customer is in region - SP
+
 SELECT *
 FROM EMPLOYEES E INNER JOIN CUSTOMERS C
 ON E.CITY = C.CITY
