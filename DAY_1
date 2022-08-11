@@ -1,2 +1,37 @@
-Unfortunately I have closed the application without saving and lost all data.
-I'll do it again and push ASAP!!!
+--Display district from address
+
+SELECT DISTINCT district
+FROM address
+order by district;
+
+--Display all the actors name end with e
+
+SELECT last_name
+FROM actor
+WHERE  last_name like	'%e'
+ORDER BY last_name;
+
+--Displaying movies with drama keyword
+
+SELECT description from film
+WHERE description like ('%Drama%');
+
+		
+--Finding all movies which have title length =20 letters
+
+SELECT title from film
+where  length(title) = '20'
+order by film;
+
+--Display movies by title length order
+
+select length(title)
+from film
+order by length(title)
+
+--Find out average rental duration of all movies
+
+select
+avg(rental_duration)
+from film;
+
