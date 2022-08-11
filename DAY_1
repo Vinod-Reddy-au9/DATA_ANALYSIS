@@ -1,37 +1,36 @@
 --Display district from address
 
-SELECT DISTINCT district
-FROM address
-order by district;
+SELECT DISTINCT DISTRICT
+FROM ADDRESS
+ORDER BY DISTRICT;
 
 --Display all the actors name end with e
 
-SELECT last_name
-FROM actor
-WHERE  last_name like	'%e'
-ORDER BY last_name;
+SELECT LAST_NAME
+FROM ACTOR
+WHERE LAST_NAME LIKE '%E'
+ORDER BY LAST_NAME;
 
 --Displaying movies with drama keyword
 
-SELECT description from film
-WHERE description like ('%Drama%');
-
+SELECT DESCRIPTION FROM FILM
+WHERE DESCRIPTION LIKE ('%DRAMA%');
 		
 --Finding all movies which have title length =20 letters
 
-SELECT title from film
-where  length(title) = '20'
-order by film;
+SELECT TITLE FROM FILM
+WHERE  LENGTH(TITLE) = '20'
+ORDER BY FILM;
 
 --Display movies by title length order
 
-select length(title)
-from film
-order by length(title)
+SELECT LENGTH(TITLE)
+FROM FILM
+ORDER BY LENGTH(TITLE)
 
 --Find out average rental duration of all movies
 
-select
-avg(rental_duration)
-from film;
+SELECT
+AVG(RENTAL_DURATION)
+FROM FILM;
 
