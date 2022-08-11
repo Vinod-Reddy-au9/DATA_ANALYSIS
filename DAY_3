@@ -1,0 +1,60 @@
+--NORTHWIND
+--1. Display PRODUCTID, CATEGORYID, MAX UNITPRICE by Categoryid of the Products
+
+SELECT PRODUCTID, CATEGORYID, MAX(UNITPRICE)
+OVER(PARTITION BY CATEGORYID)
+FROM PRODUCTS;
+
+--2. Display orderid,sum of quantity by orderid whose sum of quantity is less than 40
+
+SELECT ORDERID, SUM(QUANTITY)
+FROM ORDER_DETAILS GROUP BY ORDERID
+HAVING MIN (QUANTITY) = 30
+ORDER BY SUM(QUANTITY);
+
+--3. Display productid,orderid,min of quantity by orderid of the orderdetails
+
+
+SELECT PRODUCTID, ORDERID, MIN(QUANTITY)
+FROM ORDER_DETAILS GROUP BY ORDERID, PRODUCTID
+
+--4. Create a view as served_countries to display employeeid,orderid and country
+
+CREATE VIEW SERVED_COUNTRIESS
+AS
+SELECT EMPLOYEEID, ORDERID, SHIPCOUNTRY
+FROM ORDERS
+
+SELECT * FROM SERVED_COUNTRIESS
+
+--DVD RENTAL
+--1.Display id,firstname’s of actor and customer as person_id and person_name
+
+
+
+--2. Display count of cityids having same countryid
+
+SELECT COUNT(CITY_ID) FROM CITY
+WHERE CITY_ID  = COUNTRY_ID
+
+--3.Display the actors firstname,lastname of their film title starts with A and B
+
+SELECT FIRST_NAME, LAST_NAME, TITLE
+FROM ACTOR A INNER JOIN FILM_ACTOR F1
+ON A.ACTOR_ID = F1.ACTOR_ID INNER JOIN FILM F2
+ON F1.FILM_ID = F2.FILM_ID
+WHERE TITLE LIKE 'A%' OR TITLE LIKE 'B%'
+
+
+--4.create view for the question 3 and get the count of actors acted in each film
+
+CREATE VIEW CCCC
+AS
+SELECT FIRST_NAME, LAST_NAME, TITLE
+FROM ACTOR A INNER JOIN FILM_ACTOR F1
+ON A.ACTOR_ID = F1.ACTOR_ID INNER JOIN FILM F2
+ON F1.FILM_ID = F2.FILM_ID
+WHERE TITLE LIKE 'A%' OR TITLE LIKE 'B%'
+
+SELECT TITLE,COUNT(*)
+FROM CCCC GROUP BY TITLE;
