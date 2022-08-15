@@ -1,0 +1,36 @@
+###Introduction
+--I have worked as a SQL developer for an E-Commerce company.
+--I used to help sales team to deal with orders packing and dispatching easily.
+--As e-commerce experiences remarkable growth around the world,
+--The application allows the customer to Update and Delete the wrong entries.
+
+###Agenda of the project###
+--Understanding the basics of data analysis, SQL commands, and their application
+--Understanding different types of joins.
+--Joining multiple tables.
+--Understanding different types of
+--Joins(Inner join, Left outer join, Right outer join, Full outer join, Self join),
+
+
+SELECT *
+FROM ACTOR A INNER JOIN FILM_ACTOR F1
+ON A.ACTOR_ID = F1.FILM_ID INNER JOIN FILM F2
+ON F1.FILM_ID = F2.FILM_ID
+WHERE FIRST_NAME = 'ED' AND LAST_NAME = 'CHASE'
+
+SELECT *
+FROM EMPLOYEES E OUTER JOIN ORDERS O
+ON E.EMPLOYEEID = O.EMPLOYEEID
+WHERE SHIPREGION = 'RJ';
+
+
+SELECT *
+FROM EMPLOYEES E INNER JOIN CUSTOMERS C
+ON E.CITY = C.CITY
+WHERE REGION LIKE 'SP';
+
+SELECT FIRST_NAME, LAST_NAME, TITLE
+FROM ACTOR A INNER JOIN FILM_ACTOR F1
+ON A.ACTOR_ID = F1.ACTOR_ID INNER JOIN FILM F2
+ON F1.FILM_ID = F2.FILM_ID
+WHERE TITLE LIKE 'A%' OR TITLE LIKE 'B%'
