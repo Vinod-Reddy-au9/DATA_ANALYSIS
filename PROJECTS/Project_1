@@ -1,0 +1,49 @@
+###Introduction
+--I have worked as a SQL developer for an E-Commerce company.
+--I used to help sales team to deal with orders packing and dispatching easily.
+--As e-commerce experiences remarkable growth around the world,
+--The application allows the customer to Update and Delete the wrong entries.
+
+###Agenda of the project###
+--The project’s Agenda involves Analyzing the data using SQL on the postgreSQL
+--My project involves use of WHERE, TRUNCATE, DLETE, UPDATE, ORDER BY
+--Records are displayed in an ordered manner, handling NULL values,
+--Then working on Data Manipulation commands(DML) for Data Analysis.
+--My project also includes BACKUP of a Database
+--Then listing down distinct cities
+--Involves use of CONCAT
+
+
+
+--Queries
+SELECT * FROM ORDERS
+WHERE ORDERID = 10254;
+
+SELECT * FROM CUSTOMER;
+
+SELECT FIRST_NAME || ' ' || LAST_NAME AS FULL_NAME
+FROM CUSTOMER;
+
+SELECT SHIPREGION FROM ORDERS
+ORDER BY SHIPREGION NULLS FIRST;
+
+SELECT * FROM EMP
+WHERE SAL = 4545;
+
+
+INSERT INTO EMP(empno, ename, job, mgr, hiredate, sal, comm, deptno)
+VALUES (111, 'VINOD', 'DATA_ANALYST', '1999-01-01', 1000, 250, 20);
+
+UPDATE EMP SET SAL = '4545'
+WHERE MGR = '7839';
+
+DELETE FROM EMP
+WHERE COMM = 300;
+
+CREATE TABLE SNAPSHOP AS (SELECT * FROM EMP);
+SELECT * FROM SNAPSHOP;
+
+SELECT DISTINCT(DEPTNO) FROM EMP
+
+SELECT SAL FROM EMP
+WHERE SAL > 1000
